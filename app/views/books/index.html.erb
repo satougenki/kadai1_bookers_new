@@ -1,5 +1,6 @@
 <div><%= flash[:notice] %></div>
 <h1>Books</h1>
+
 <% if @book.errors.any? %>
   <%= @book.errors.count %>件のエラーが発生しました
   <ul>
@@ -8,21 +9,22 @@
     <% end %>
   </ul>
 <% end %>
-<table>
- <tr>
-  <th>Title</th>
-  <th>Body</th>
-  <th></th>
+<table class="book-wrap">
+ <tr class="table-tilte">
+  <th class="title">Title</th>
+  <th class="body">Body</th>
+  <th class="link">@</th>
  </tr>
 <% @books.each do |book| %>
- <tr>
-  <td><%= book.title %></td>
-  <td><%= book.body %></td>
-  <td>
-   <span><%= link_to "Show", book_path(book.id) %></span>|
+ <tr class="book-comment">
+  <td class="book-title"><%= book.title %></td>
+  <td class="book-body"><%= book.body %></td>
+  <td class="book-link">
+   <span><%= link_to "Show", book_path(book.id) %></span>
    <span><%= link_to "Edit", edit_book_path(book.id) %></span>
    <span><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "Are you sure?" %></span>
-  </tr>
+  </td>
+ </tr>
 <% end %>
 </table>
 

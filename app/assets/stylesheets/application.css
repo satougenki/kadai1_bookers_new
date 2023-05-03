@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 33px;
+  font-size: 13px;
+}
+
+table {
+  display: flex;
+  width: 700px;
+}
+
+tr {
+  display: flex;
+}
+
+.book-title {
+  width: 148px;
+  padding: 0px 5px 7px 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.book-body {
+  width: 400px;
+  padding: 0px 5px 7px 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.title {
+  width: 148px;
+}
+
+.body {
+  width: 400px;
+}
