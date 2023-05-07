@@ -1,19 +1,12 @@
 <div><%= flash[:notice] %></div>
 <h1>Books</h1>
 
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
+
 <table class="book-wrap">
  <tr class="table-tilte">
   <th class="title">Title</th>
   <th class="body">Body</th>
-  <th class="link">@</th>
+  <th class="link"></th>
  </tr>
 <% @books.each do |book| %>
  <tr class="book-comment">
@@ -27,6 +20,17 @@
  </tr>
 <% end %>
 </table>
+
+<div class="errors_messages">
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+</div>
 
 <h1>New book</h1>
 <%= form_with model: @book do |f| %>
